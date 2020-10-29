@@ -1,0 +1,49 @@
+{
+  "_from": "nodeactyl",
+  "_id": "nodeactyl@2.0.3",
+  "_inBundle": false,
+  "_integrity": "sha512-lDfGjGJsd0aBAlg+G+zdxwsZ/oQ/C+igHBQ0NqJgxBAUuCPAc+UIMGoInAZjtUKSZw56PNB6Gpgy/CwCjyEf1Q==",
+  "_location": "/nodeactyl",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "nodeactyl",
+    "name": "nodeactyl",
+    "escapedName": "nodeactyl",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nodeactyl/-/nodeactyl-2.0.3.tgz",
+  "_shasum": "c75b23577fe2ac1af20c5ac3e984d0a4aa068f23",
+  "_spec": "nodeactyl",
+  "_where": "/home/container",
+  "author": {
+    "name": "Dalton Burchard"
+  },
+  "bugs": {
+    "url": "https://github.com/Burchard36/Nodeactyl"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "deprecated": false,
+  "description": "NodeJS API For pterodactyl panel",
+  "homepage": "https://github.com/Burchard36/Nodeactyl",
+  "keywords": [
+    "project"
+  ],
+  "license": "MIT",
+  "main": "Nodeactyl.js",
+  "name": "nodeactyl",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.3"
+}
