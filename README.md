@@ -1,4 +1,4 @@
-# Nodeactyl: 100% remastered
+# Important : This is a clone of Nodeactyl. We do not own this software. This is a modified version of Nodeactyl to support latest version of pterodactyl!
 
 *If you have issues with downloading this package, and you come accross "package.json" not found, open a cmd.exe in the startup bar of your PC and then type* `npm init -y`
 
@@ -21,10 +21,3 @@ This library works by querying the Pterodactyl API (REST requests) using a libra
 
 ## Documentation
 https://docs.nodeactyl.xyz
-
-## Disclaimer
-We (The Nodeactyl team) are not responsible for any damages that you cause to your servers/nodes by using this API. 
-
-Remember: This API can potentially be dangerous with the ability to Delete Servers/Nodes at an instant is extremely easy! 
-
-It is *not* our fault if your API key is revealed to the public. When asking for help please do **not** send the full stack error. This will reveal your ENTIRE Host/Application API key in the request, if someone asks you to show them the error it should only be trusted sources! (Such as the Pterodactyl Team/Nodeactyl Team). You should also have your API key changed every 1-3 days to prevent issues like this.
