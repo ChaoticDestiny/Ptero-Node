@@ -11,4 +11,4 @@ npm install nodeactyl
 https://docs.nodeactyl.xyz
 
 ## Support Discord
-[https://discord.gg/beTDVtD] (https://discord.gg/beTDVtD)
+https://discord.gg/beTDVtD
