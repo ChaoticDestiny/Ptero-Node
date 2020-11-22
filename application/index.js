@@ -17,8 +17,8 @@ const getallnodes = require('./methods/getAllNodes.js');
 
 // PATCH
 const updateuser = require('./methods/updateUser.js');
-const updateswap = require('./methods/updateSwap.js');
-const updatememory = require('./methods/setRAM.js');
+
+
 
 // DELETE
 const deleteuser = require('./methods/deleteUser.js');
@@ -96,11 +96,8 @@ module.exports = {
 	getUserInfo: getuserinfo,
 	getNodeInfo: getnode,
 	getAllNodes: getallnodes,
-
 	// PATCH
 	updateUser: updateuser,
-	updateSwap: updateswap,
-	updateMemory: updatememory,
 
 	// DELETE
 	deleteUser: deleteuser,

@@ -6,9 +6,11 @@ const getserverinfo = require('./methods/getServerInfo.js');
 const getserverstatus = require('./methods/getServerStatus.js');
 const isowner = require('./methods/isOwner.js');
 const getcpucores = require('./methods/getCPUCores.js');
-const getcpuusage = require('./methods/getCPUUsage.js');
 const getramusage = require('./methods/getRAMUsage.js');
 const getdiskusage = require('./methods/getDiskUsage.js');
+const getcpuusage = require('./methods/getCPUUsage.js');
+const getdisk = require('./methods/getDisk.js');
+const getram = require('./methods/getRAM.js');
 
 // POST
 const startserver = require('./methods/startServer.js');
@@ -16,6 +18,7 @@ const stopserver = require('./methods/stopServer.js');
 const killserver = require('./methods/killServer.js');
 const restartserver = require('./methods/restartServer.js');
 const sendcommand = require('./methods/sendCommand.js');
+const createbackup = require('./methods/createBackup.js');
 
 /**
  *
@@ -74,6 +77,8 @@ module.exports = {
 	getCPUUsage: getcpuusage,
 	getRAMUsage: getramusage,
 	getDiskUsage: getdiskusage,
+	getDisk: getdisk,
+	getRAM: getram,
 
 	// POST
 	startServer: startserver,
@@ -81,4 +86,5 @@ module.exports = {
 	killServer: killserver,
 	restartServer: restartserver,
 	sendCommand: sendcommand,
+	createBackup: createbackup,
 };
