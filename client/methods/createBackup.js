@@ -10,6 +10,6 @@ const data = { 'serverid': ServerID, 'name': Name, 'ignored_files': Ignored_file
 const Req = new req(process.env.CLIENT_NODEACTYL_HOST, process.env.CLIENT_NODEACTYL_KEY);
 return Req.postRequest('CreateBackup',data,ServerID);
 }
-//IMPORTANT : IGNORED FILES DO NOT WORK FULLY
+//IMPORTANT : IGNORED FILES DO NOT WORK FULLY | BETA
 
 module.exports = createBackup; 
