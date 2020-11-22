@@ -5,6 +5,7 @@
   "_integrity": "sha512-lDfGjGJsd0aBAlg+G+zdxwsZ/oQ/C+igHBQ0NqJgxBAUuCPAc+UIMGoInAZjtUKSZw56PNB6Gpgy/CwCjyEf1Q==",
   "_location": "/nodeactyl",
   "_phantomChildren": {},
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "_requested": {
     "type": "tag",
     "registry": true,
