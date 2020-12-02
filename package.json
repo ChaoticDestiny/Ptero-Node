@@ -1,8 +1,9 @@
 {
-  "name": "nodeactyl",
+  "name": "nodeactyl-for-v1",
   "version": "1.0.0",
   "description": "NodeJS API For pterodactyl panel",
-  "main": "Nodeactyl.js",
+  "main": "Nodeactyl.js", 
+  "publishConfig":{"registry":"https://npm.pkg.github.com"},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
