@@ -4,7 +4,7 @@
 
 ## Installation
 ```
-npm install nodeactyl
+npm install ChaoticDestiny/nodeactyl-for-v1
 ```
 ## Support Discord
 https://discord.gg/znF5dCf

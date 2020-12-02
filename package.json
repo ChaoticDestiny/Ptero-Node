@@ -2,15 +2,14 @@
   "name": "nodeactyl-for-v1",
   "version": "1.0.0",
   "description": "NodeJS API For pterodactyl panel",
-  "main": "Nodeactyl.js", 
-  "publishConfig":{"registry":"https://npm.pkg.github.com"},
+  "main": "Nodeactyl.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "project"
+    "nodeactyl"
   ],
-  "author": "Dalton Burchard",
+  "author": "ChaoticDestiny",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ChaoticDestiny/Nodeactyl-for-v1"
