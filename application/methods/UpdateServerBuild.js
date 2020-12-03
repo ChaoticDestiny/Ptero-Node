@@ -15,7 +15,25 @@ const req = require('../ApplicationRequest.js');
  */
 function UpdateServerBuild(InternalID, AllocationID, RAM, Swap, IO, CPU, Disk, Threads, AmountOfDatabases, AmountOfBackups, AmountOfAllocations) {
 	const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
+	const data = updateData(AllocationID, RAM, Swap, IO, CPU, Disk, Threads, AmountOfDatabases, AmountOfBackups, AmountOfAllocations);
 	return Req.patchRequest('UpdateServerBuild', data, InternalID);
 }
+
+function updateData(AllocationID, RAM, Swap, IO, CPU, Disk, Threads, AmountOfDatabases, AmountOfBackups, AmountOfAllocations) {
+	return {
+		'allocation': AllocationID,
+		'memory': RAM,
+		'swap': Swap,
+		'io': IO,
+		'cpu': CPU,
+		'threads': Threads,
+		'feature_limits': {
+			'databases': AmountOfDatabases,
+			'allocations': AmountOfAllocations,
+			'backups': AmountOfBackups
+		}
+	};
+}
+
 
 module.exports = UpdateServerBuild;
