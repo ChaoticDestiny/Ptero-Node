@@ -102,6 +102,9 @@ class Request {
 			else if (request == 'CreateUser') {
 				return response.data.attributes;
 			}
+			else if (request == 'UpdateServerBuild') {
+				return response.data.attributes;
+			}
 		}).catch(error => {
 			const err = createError(request, error, data);
 			if (err) throw err;
