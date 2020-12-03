@@ -169,6 +169,9 @@ function getUrl(request, host, data) { // _data = nullable
 	else if (request == 'DeleteServer') {
 		return host + '/api/application/servers/' + data;
 	}
+	else if (request == 'UpdateServerBuild') {
+		return host + '/api/application/servers/' + data + '/build';
+	}
 	else if(request == 'GetAllUsersPagination') {
 		return host + '/api/application/users?page=' + data;
 	}
