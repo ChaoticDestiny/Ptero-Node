@@ -102,6 +102,9 @@ class Request {
 			else if (request == 'CreateUser') {
 				return response.data.attributes;
 			}
+			else if (request == 'UpdateServerBuild') {
+				return response.data.attributes;
+			}
 		}).catch(error => {
 			const err = createError(request, error, data);
 			if (err) throw err;
@@ -168,6 +171,9 @@ function getUrl(request, host, data) { // _data = nullable
 	}
 	else if (request == 'DeleteServer') {
 		return host + '/api/application/servers/' + data;
+	}
+	else if (request == 'UpdateServerBuild') {
+		return host + '/api/application/servers/' + data + '/build';
 	}
 	else if(request == 'GetAllUsersPagination') {
 		return host + '/api/application/users?page=' + data;
