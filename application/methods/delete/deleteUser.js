@@ -1,4 +1,4 @@
-const req = require('../ApplicationRequest.js');
+const req = require('../../ApplicationRequest.js');
 
 /**
  * @param {String} UserID The user ID to delete

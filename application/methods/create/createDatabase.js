@@ -1,4 +1,4 @@
-const req = require('../ApplicationRequest')
+const req = require('../../ApplicationRequest')
 /**
  * @param {String} Name Name of the Database
  * @param {String} AllowedIP IP allowed to connect, leave "%" if you dont want to restrict

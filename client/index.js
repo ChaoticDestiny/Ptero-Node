@@ -3,22 +3,23 @@ const axios = require('axios');
 // GET
 const getallservers = require('./methods/getAllServers.js');
 const getserverinfo = require('./methods/getServerInfo.js');
-const getserverstatus = require('./methods/getServerStatus.js');
+const getserverstatus = require('./methods/status/getServerStatus.js');
 const isowner = require('./methods/isOwner.js');
-const getcpucores = require('./methods/getCPUCores.js');
-const getramusage = require('./methods/getRAMUsage.js');
-const getdiskusage = require('./methods/getDiskUsage.js');
-const getcpuusage = require('./methods/getCPUUsage.js');
-const getdisk = require('./methods/getDisk.js');
-const getram = require('./methods/getRAM.js');
+const getcpulimit = require('./methods/status/getCPULimit.js');
+const getramusage = require('./methods/status/getRAMUsage.js');
+const getdiskusage = require('./methods/status/getDiskUsage.js');
+const getcpuusage = require('./methods/status/getCPUUsage.js');
+const getdisklimit = require('./methods/status/getDiskLimit.js');
+const getramlimit = require('./methods/status/getRAMLimit.js');
 
 // POST
-const startserver = require('./methods/startServer.js');
-const stopserver = require('./methods/stopServer.js');
-const killserver = require('./methods/killServer.js');
-const restartserver = require('./methods/restartServer.js');
-const sendcommand = require('./methods/sendCommand.js');
-const createbackup = require('./methods/createBackup.js');
+const startserver = require('./methods/remote/startServer.js');
+const stopserver = require('./methods/remote/stopServer.js');
+const killserver = require('./methods/remote/killServer.js');
+const restartserver = require('./methods/remote/restartServer.js');
+const sendcommand = require('./methods/remote/sendCommand.js');
+const reinstallserver = require('./methods/remote/reinstallServer.js');
+const createbackup = require('./methods/remote/createBackup.js');
 
 /**
  *
@@ -73,12 +74,12 @@ module.exports = {
 	getServerInfo: getserverinfo,
 	getServerStatus: getserverstatus,
 	isOwner: isowner,
-	getCPUCores: getcpucores,
+	getCPULimit: getcpulimit,
 	getCPUUsage: getcpuusage,
 	getRAMUsage: getramusage,
 	getDiskUsage: getdiskusage,
-	getDisk: getdisk,
-	getRAM: getram,
+	getDiskLimit: getdisklimit,
+	getRAMLimit: getramlimit,
 
 	// POST
 	startServer: startserver,
@@ -86,5 +87,6 @@ module.exports = {
 	killServer: killserver,
 	restartServer: restartserver,
 	sendCommand: sendcommand,
+	reinstallServer: reinstallserver,
 	createBackup: createbackup,
 };

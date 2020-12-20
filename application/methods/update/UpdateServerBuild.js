@@ -1,4 +1,4 @@
-const req = require('../ApplicationRequest.js');
+const req = require('../../ApplicationRequest.js');
 
 /**
  * @param {String} InternalID Internal ID of the server to update server build
@@ -26,6 +26,7 @@ function updateData(AllocationID, RAM, Swap, IO, CPU, Disk, Threads, AmountOfDat
 		'swap': Swap,
 		'io': IO,
 		'cpu': CPU,
+		'disk': Disk,
 		'threads': Threads,
 		'feature_limits': {
 			'databases': AmountOfDatabases,

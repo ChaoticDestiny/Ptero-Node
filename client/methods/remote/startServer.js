@@ -1,4 +1,4 @@
-const req = require('../ClientRequest.js');
+const req = require('../../ClientRequest.js');
 
 /**
  * @param {String} ServerID ID of the server to start

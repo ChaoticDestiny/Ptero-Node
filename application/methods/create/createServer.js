@@ -1,4 +1,4 @@
-const req = require('../ApplicationRequest.js');
+const req = require('../../ApplicationRequest.js');
 /**
  * @param {String} Version Version of the server to use
  * @param {String} NameOfServer Name of server to create

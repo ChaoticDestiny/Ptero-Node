@@ -1,29 +1,29 @@
 const axios = require('axios');
 
 // POST
-const createuser = require('./methods/createUser.js');
-const createserver = require('./methods/createServer.js');
-const createnode = require('./methods/createNode.js');
-const suspendserver = require('./methods/suspendServer.js');
-const unsuspendserver = require('./methods/unSuspendServer.js');
-const createdatabase = require('./methods/createDatabase');
+const createuser = require('./methods/create/createUser.js');
+const createserver = require('./methods/create/createServer.js');
+const createnode = require('./methods/create/createNode.js');
+const suspendserver = require('./methods/update/suspendServer.js');
+const unsuspendserver = require('./methods/update/unSuspendServer.js');
+const createdatabase = require('./methods/create/createDatabase');
 
 // GET
-const getallservers = require('./methods/getAllServers.js');
-const getallusers = require('./methods/getAllUsers.js');
-const getuserinfo = require('./methods/getUserInfo.js');
-const getnode = require('./methods/getNodeInfo.js');
-const getallnodes = require('./methods/getAllNodes.js');
+const getallservers = require('./methods/get/getAllServers.js');
+const getallusers = require('./methods/get/getAllUsers.js');
+const getuserinfo = require('./methods/get/getUserInfo.js');
+const getnode = require('./methods/get/getNodeInfo.js');
+const getallnodes = require('./methods/get/getAllNodes.js');
 
 // PATCH
-const updateuser = require('./methods/updateUser.js');
+const updateuser = require('./methods/update/updateUser.js');
 
 
 
 // DELETE
-const deleteuser = require('./methods/deleteUser.js');
-const deletenode = require('./methods/deleteNode.js');
-const deleteserver = require('./methods/deleteServer.js');
+const deleteuser = require('./methods/delete/deleteUser.js');
+const deletenode = require('./methods/delete/deleteNode.js');
+const deleteserver = require('./methods/delete/deleteServer.js');
 
 /**
  *

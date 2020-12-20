@@ -80,13 +80,13 @@ class Request {
 				else if (request == 'IsOwner') {
 					return response.data.attributes.server_owner;
 				}
-				else if (request == 'GetCPUCores') {
+				else if (request == 'GetCPULimit') {
 					return response.data.attributes.limits.cpu + '%';
 				}
-				else if (request == 'GetRam') {
+				else if (request == 'GetRamLimit') {
 					return bytesToSize(response.data.attributes.limits.memory + '000000');
 				}
-				else if (request == 'GetDisk') {
+				else if (request == 'GetDiskLimit') {
 					return bytesToSize(response.data.attributes.limits.disk + '000000');
 				}
 			}).catch(error => {
@@ -125,6 +125,9 @@ class Request {
 			else if (request == 'SendCommand') {
 				return 'Command send successfully';
 			}
+			else if (request == 'ReinstallServer') {
+				return 'Server reinstalled successfully';
+			}
 			else if(request == 'CreateBackup') {
 				return response.data.attributes;
             }
@@ -135,7 +138,7 @@ class Request {
 	}
 }
 
-const utilization = ['GetCPUCores', 'GetRam', 'GetDisk'];
+const utilization = ['GetCPULimit', 'GetRamLimit', 'GetDiskLimit'];
 const status = ['GetServerStatus', 'GetCPUUsage', 'GetRamUsage', 'GetDiskUsage']
 const info = ['GetServerInfo', 'IsOwner'];
 const powerAction = ['StartServer', 'StopServer', 'KillServer', 'RestartServer'];
@@ -158,11 +161,13 @@ function getUrl(request, host, data) {
 	else if (request == 'SendCommand') {
 		return host + '/api/client/servers/' + data + '/command';
 	}
+	else if (request == 'ReinstallServer') {
+		return host + '/api/client/servers/' + data + '/settings/reinstall';
+	}
 	else if (request == 'CreateBackup') {
 		return host + '/api/client/servers/' + data + '/backups';
 	}
 }
-
 function createError(request, err) {
 	return err;
 	// will work on this later
