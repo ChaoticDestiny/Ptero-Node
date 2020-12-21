@@ -1,4 +1,7 @@
-# Important : This is a clone of Nodeactyl. Chaotic Destiny does not own this code. This is a modified version of Nodeactyl to support latest version of pterodactyl! 
+# Chaotic Destiny Hosting | API Management for Pterodactyl v1.1.3
+
+Client Features : Functional
+Application Features : Functional
 
 
 
