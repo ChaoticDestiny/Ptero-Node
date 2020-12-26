@@ -1,6 +1,6 @@
 const axios = require('axios');
-
-// GET
+const settings = require('./../settings.json')
+// Get Data
 const getallservers = require('./methods/getAllServers.js');
 const getserverinfo = require('./methods/getServerInfo.js');
 const getserverstatus = require('./methods/status/getServerStatus.js');
@@ -12,7 +12,7 @@ const getcpuusage = require('./methods/status/getCPUUsage.js');
 const getdisklimit = require('./methods/status/getDiskLimit.js');
 const getramlimit = require('./methods/status/getRAMLimit.js');
 
-// POST
+// Post Data
 const startserver = require('./methods/remote/startServer.js');
 const stopserver = require('./methods/remote/stopServer.js');
 const killserver = require('./methods/remote/killServer.js');
@@ -23,18 +23,18 @@ const createbackup = require('./methods/remote/createBackup.js');
 
 /**
  *
- * @param {String} HOST Host to use
- * @param {String} KEY Client API key
+ * @param {String} HOST
+ * @param {String} KEY
  */
 function login(HOST, KEY, callback) {
 	HOST = HOST.trim();
 	if(HOST.endsWith('/')) HOST = HOST.slice(0, -1);
 
-	process.env.CLIENT_NODEACTYL_HOST = HOST;
-	process.env.CLIENT_NODEACTYL_KEY = KEY;
+	process.env.CLIENT_PTERO_HOST = HOST;
+	process.env.CLIENT_PTERO_KEY = KEY;
 	axios.get(HOST + '/api/client', {
 		responseEncoding: 'utf8',
-		maxRedirects: 5,
+		maxRedirects: settings.maxRedirects,
 		headers: {
 			'Authorization': 'Bearer ' + KEY,
 			'Content-Type': 'application/json',
@@ -60,8 +60,8 @@ function login(HOST, KEY, callback) {
 function fastLogin(HOST, KEY) {
 	HOST = HOST.trim();
 	if(HOST.endsWith('/')) HOST = HOST.slice(0, -1);
-	process.env.CLIENT_NODEACTYL_HOST = HOST;
-	process.env.CLIENT_NODEACTYL_KEY = KEY;
+	process.env.CLIENT_PTERO_HOST = HOST;
+	process.env.CLIENT_PTERO_KEY = KEY;
 }
 
 
@@ -69,7 +69,7 @@ module.exports = {
 	login: login,
 	fastLogin: fastLogin,
 
-	// GET
+	// Get Data
 	getAllServers: getallservers,
 	getServerInfo: getserverinfo,
 	getServerStatus: getserverstatus,
@@ -81,7 +81,7 @@ module.exports = {
 	getDiskLimit: getdisklimit,
 	getRAMLimit: getramlimit,
 
-	// POST
+	// Post Data
 	startServer: startserver,
 	stopServer: stopserver,
 	killServer: killserver,

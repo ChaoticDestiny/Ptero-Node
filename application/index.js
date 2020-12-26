@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-// POST
+// Post Data
 const createuser = require('./methods/create/createUser.js');
 const createserver = require('./methods/create/createServer.js');
 const createnode = require('./methods/create/createNode.js');
@@ -8,35 +8,35 @@ const suspendserver = require('./methods/update/suspendServer.js');
 const unsuspendserver = require('./methods/update/unSuspendServer.js');
 const createdatabase = require('./methods/create/createDatabase');
 
-// GET
+// Get Data
 const getallservers = require('./methods/get/getAllServers.js');
 const getallusers = require('./methods/get/getAllUsers.js');
 const getuserinfo = require('./methods/get/getUserInfo.js');
 const getnode = require('./methods/get/getNodeInfo.js');
 const getallnodes = require('./methods/get/getAllNodes.js');
 
-// PATCH
+// Patch Data
 const updateuser = require('./methods/update/updateUser.js');
 
 
 
-// DELETE
+// Delete Data
 const deleteuser = require('./methods/delete/deleteUser.js');
 const deletenode = require('./methods/delete/deleteNode.js');
 const deleteserver = require('./methods/delete/deleteServer.js');
 
 /**
  *
- * @param {String} HOST Host to connect to
- * @param {String} KEY Key to use
+ * @param {String} HOST
+ * @param {String} KEY
  * @param {Boolean, String} callback Returns true when login is successful
  */
 function login(HOST, KEY, callback) {
 	HOST = HOST.trim();
 	if(HOST.endsWith('/')) HOST = HOST.slice(0, -1);
 
-	process.env.APPLICATION_NODEACTYL_HOST = HOST;
-	process.env.APPLICATION_NODEACTYL_KEY = KEY;
+	process.env.APPLICATION_PTERO_HOST = HOST;
+	process.env.APPLICATION_PTERO_KEY = KEY;
 	axios.get(HOST + '/api/application/users', {
 		responseEncoding: 'utf8',
 		maxRedirects: 5,
@@ -64,16 +64,15 @@ function login(HOST, KEY, callback) {
 
 /**
  *
- * @param {String} HOST The host to use
- * @param {String} KEY The application key to use
- * @Warning USE THIS ONLY IF YOU KNOW YOUR CREDENTIALS ARE 100% CORRECT, OR THEY NEVER CHANGE
+ * @param {String} HOST
+ * @param {String} KEY
  */
 function fastLogin(HOST, KEY) {
 	HOST = HOST.trim();
 	if(HOST.endsWith('/')) HOST = HOST.slice(0, -1);
 
-	process.env.APPLICATION_NODEACTYL_HOST = HOST;
-	process.env.APPLICATION_NODEACTYL_KEY = KEY;
+	process.env.APPLICATION_PTERO_HOST = HOST;
+	process.env.APPLICATION_PTERO_KEY = KEY;
 }
 
 
@@ -82,7 +81,7 @@ module.exports = {
 	login: login,
 	fastLogin: fastLogin,
 
-	// POST
+	// Post Data
 	createUser: createuser,
 	createServer: createserver,
 	createNode: createnode,
@@ -90,16 +89,17 @@ module.exports = {
 	unSuspendServer: unsuspendserver,
     createDatabase: createdatabase,
 
-	// GET
+	// Get Data
 	getAllServers: getallservers,
 	getAllUsers: getallusers,
 	getUserInfo: getuserinfo,
 	getNodeInfo: getnode,
 	getAllNodes: getallnodes,
-	// PATCH
+
+	// Patch Data
 	updateUser: updateuser,
 
-	// DELETE
+	// Delete Data
 	deleteUser: deleteuser,
 	deleteNode: deletenode,
 	deleteServer: deleteserver,

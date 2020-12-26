@@ -46,7 +46,7 @@ class Request {
 		});
 	}
 
-	postRequest(request, data, data_) { // data_ is the d normall
+	postRequest(request, data, data_) {
 		const URL = getUrl(request, this.host, data_);
 		return axios({
 			url: URL,
@@ -61,7 +61,6 @@ class Request {
 			data: data,
 		}).then(function(response) {
 			if (request == 'CreateServer') {
-				// If people want make it return the server object
 				return response.data.attributes;
 			}
 			else if (request == 'CreateUser') {
@@ -81,9 +80,8 @@ class Request {
 			if (err) throw err;
 		});
 	}
-	// Third arg is nullable
 	patchRequest(request, data, _data) {
-		const URL = getUrl(request, this.host, _data); // _data = nullable
+		const URL = getUrl(request, this.host, _data);
 		return axios({
 			url: URL,
 			method: 'PATCH',
@@ -126,7 +124,7 @@ class Request {
 			data: data,
 		}).then(function(response) {
 			if (request == 'DeleteUser') {
-				// If people want make it return the server object
+
 				return 'User deleted successfully.';
 			}
 			else if (request == 'DeleteNode') {
@@ -147,7 +145,7 @@ const users = ['CreateUser', 'GetAllUsers'];
 const user = ['EditUser', 'DeleteUser', 'GetUserInfo'];
 const nodes = ['GetAllNodes', 'CreateNode'];
 const node = ['GetNodeInfo', 'DeleteNode'];
-function getUrl(request, host, data) { // _data = nullable
+function getUrl(request, host, data) {
 	if (user.indexOf(request) > -1) {
 		return host + '/api/application/users/' + data;
 	}

@@ -1,9 +1,9 @@
 const axios = require('axios');
+const settings = require('./../settings.json')
 
 function bytesToSize(bytes) {
 	const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
 	if (bytes === 0) return 'n/a'
-
 	const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1012)), 10)
 	if (i === 0) return `${bytes} ${sizes[i]})`
 	return `${(bytes / (1024 ** i)).toFixed(1)} ${sizes[i]}`
@@ -16,7 +16,7 @@ class Request {
 	}
 
 	getRequest(request, data) {
-		const URL = getUrl(request, this.host, data); // data is nullable
+		const URL = getUrl(request, this.host, data);
 
 		var splittedURL = URL.split('/')
 		var splitted = '';
@@ -36,7 +36,7 @@ class Request {
 		if (request == 'GetServerStatus' || request == 'GetCPUUsage' || request == 'GetDiskUsage' || request == 'GetRamUsage')
 		{
 			return axios.default.get(splitted + '/resources', {
-				maxRedirects: 5,
+				maxRedirects: settings.maxRedirects,
 				headers: {
 					'Authorization': 'Bearer ' + this.key,
 					'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ class Request {
 		else
 		{
 			return axios.default.get(splitted, {
-				maxRedirects: 5,
+				maxRedirects: settings.maxRedirects,
 				headers: {
 					'Authorization': 'Bearer ' + this.key,
 					'Content-Type': 'application/json',
@@ -96,13 +96,13 @@ class Request {
 		}
 	}
 
-	postRequest(request, data, data_) { // data_ is normally the serverID
+	postRequest(request, data, data_) {
 		const URL = getUrl(request, this.host, data_);
 		return axios({
 			url: URL,
 			method: 'POST',
 			followRedirect: true,
-			maxRedirects: 5,
+			maxRedirects: settings.maxRedirects,
 			headers: {
 				'Authorization': 'Bearer ' + this.key,
 				'Content-Type': 'application/json',
@@ -168,9 +168,10 @@ function getUrl(request, host, data) {
 		return host + '/api/client/servers/' + data + '/backups';
 	}
 }
+
+
 function createError(request, err) {
 	return err;
-	// will work on this later
 }
 
 module.exports = Request;
