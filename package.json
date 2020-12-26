@@ -1,5 +1,5 @@
 {
-  "name": "nodeactyl-for-v1",
+  "name": "@ChaoticDestiny/ptero-node",
   "version": "1.0.0",
   "description": "NodeJS API For pterodactyl panel",
   "main": "Nodeactyl.js",
