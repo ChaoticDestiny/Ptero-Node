@@ -1,8 +1,4 @@
-# Chaotic Destiny Hosting | API Management for Pterodactyl v1.1.3
-
-Client Features : Functional
-Application Features : Functional
-
+# Ptero-Node | Official Javascript Package used for managing your Pterodactyl Panel with the built in API.
 
 
 ## Installation

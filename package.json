@@ -1,32 +1,20 @@
 {
-  "name": "@ChaoticDestiny/ptero-node",
+  "name": "@ChaoticDestiny/Ptero-Node",
   "version": "1.0.0",
-<<<<<<< HEAD
-  "description": "NodeJS API For pterodactyl panel",
-  "main": "Main.js",
-=======
   "description": "NodeJS API for the Pterodactyl Panel",
-  "main": "Nodeactyl.js",
->>>>>>> 0600e79a1bf54bd02917d49e59c8185c23c010cc
+  "main": "Main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "pterodactyl",
-    "ptero-node"
+    "nodeactyl"
   ],
   "author": "ChaoticDestiny",
   "license": "MIT",
   "bugs": {
-<<<<<<< HEAD
     "url": "https://github.com/ChaoticDestiny/Ptero-Node"
   },
   "homepage": "https://github.com/ChaoticDestiny/Ptero-Node",
-=======
-    "url": "https://github.com/ChaoticDestiny/ptero-node"
-  },
-  "homepage": "https://github.com/ChaoticDestiny/ptero-node",
->>>>>>> 0600e79a1bf54bd02917d49e59c8185c23c010cc
   "dependencies": {
     "axios": "^0.19.2"
   }
