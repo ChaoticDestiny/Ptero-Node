@@ -1,4 +1,5 @@
 const req = require('../../ApplicationRequest.js');
+const settings = require('./../../../settings.json')
 /**
  * @param {String} Version Version of the server to use
  * @param {String} NameOfServer Name of server to create
@@ -22,7 +23,7 @@ function createServer(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage
 	StartupCmd, RAM, Swap, Disk, IO, CPU,
 	AmountOfDatabases, AmountOfAllocations, AmountOfBackups) {
 	const data = makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage, StartupCmd, RAM, Swap, Disk, IO, CPU, AmountOfDatabases, AmountOfAllocations, AmountOfBackups);
-	const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
+	const Req = new req(process.env.APPLICATION_PTERO_HOST, process.env.APPLICATION_PTERO_KEY);
 	return Req.postRequest('CreateServer', data, null);
 }
 
@@ -32,7 +33,7 @@ function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
 	return {
 		'name': NameOfServer,
 		'user': OwnerID,
-		'description': 'Free Server | Hosted using ChaoticDestiny.Host',
+		'description': settings.description,
 		'egg': EggID,
 		'pack': NestID,
 		'docker_image': DockerImage,
@@ -58,8 +59,6 @@ function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
 			'MC_VERSION': Version,
 			'BUILD_NUMBER': Version,
 			'INSTALL_REPO': Version,
-			'STARTUP_CMD': 'npm install --unsafe-perm',
-			'SECOND_CMD': 'node index.js',
 		},
 		'allocation': {
 			'default': 1,

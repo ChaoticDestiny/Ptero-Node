@@ -10,8 +10,9 @@ const req = require('../../ApplicationRequest.js');
  * @param {Boolean} IsAdmin New (or old) value for admin
  * @param {String} Language New (or old) language
  */
+
 function updateUser(UserID, Username, Password, Email, FirstName, LastName, IsAdmin, Language) {
-	const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
+	const Req = new req(process.env.APPLICATION_PTERO_HOST, process.env.APPLICATION_PTERO_KEY);
 	const data = createData(Username, Password, Email, FirstName, LastName, IsAdmin, Language);
 	return Req.patchRequest('EditUser', data, UserID);
 }

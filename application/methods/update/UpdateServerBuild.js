@@ -13,8 +13,9 @@ const req = require('../../ApplicationRequest.js');
  * @param {Integer} AmountOfBackups The max amount of Backups a server can use
  * @param {Integer} AmountOfAllocations The max amount of allocation(s) a server can use
  */
+
 function UpdateServerBuild(InternalID, AllocationID, RAM, Swap, IO, CPU, Disk, Threads, AmountOfDatabases, AmountOfBackups, AmountOfAllocations) {
-	const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
+	const Req = new req(process.env.APPLICATION_PTERO_HOST, process.env.APPLICATION_PTERO_KEY);
 	const data = updateData(AllocationID, RAM, Swap, IO, CPU, Disk, Threads, AmountOfDatabases, AmountOfBackups, AmountOfAllocations);
 	return Req.patchRequest('UpdateServerBuild', data, InternalID);
 }
