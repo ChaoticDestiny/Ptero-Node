@@ -1,5 +1,6 @@
 const axios = require('axios');
 const settings = require('./../settings.json')
+
 // Get Data
 const getallservers = require('./methods/getAllServers.js');
 const getserverinfo = require('./methods/getServerInfo.js');

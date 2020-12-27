@@ -1,10 +1,10 @@
 const req = require('../../ClientRequest.js');
 
 /**
- * @param {String} ServerID ID of the server status to get
+ * @param {String} ServerID ID of the server
  */
 function getServerStatus(ServerID) {
-	const Req = new req(process.env.CLIENT_NODEACTYL_HOST, process.env.CLIENT_NODEACTYL_KEY);
+	const Req = new req(process.env.CLIENT_PTERO_HOST, process.env.CLIENT_PTERO_KEY);
 	return Req.getRequest('GetServerStatus', ServerID);
 }
 

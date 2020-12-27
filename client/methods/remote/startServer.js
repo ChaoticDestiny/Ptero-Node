@@ -1,10 +1,10 @@
 const req = require('../../ClientRequest.js');
 
 /**
- * @param {String} ServerID ID of the server to start
+ * @param {String} ServerID ID of the server
  */
 function startServer(ServerID) {
-	const Req = new req(process.env.CLIENT_NODEACTYL_HOST, process.env.CLIENT_NODEACTYL_KEY);
+	const Req = new req(process.env.CLIENT_PTERO_HOST, process.env.CLIENT_PTERO_KEY);
 	const data = { 'signal': 'start' };
 	return Req.postRequest('StartServer', data, ServerID);
 }
