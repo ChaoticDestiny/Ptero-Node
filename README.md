@@ -7,7 +7,7 @@ Application Features : Functional
 
 ## Installation
 ```
-npm install ChaoticDestiny/nodeactyl-for-v1
+npm install ChaoticDestiny/ptero-node
 ```
 ## Support Discord
 https://discord.gg/znF5dCf
