@@ -16,6 +16,6 @@
   },
   "homepage": "https://github.com/ChaoticDestiny/Ptero-Node",
   "dependencies": {
-    "axios": "^0.26.1"
+    "axios": "^0.27.1"
   }
 }
